@@ -31,11 +31,34 @@ public:
 	}
 
 	void pop(){
-
+		if (size > 0)
+		{
+			data[20 - size] = null;
+			size--;
+		}
+		else
+		{
+			throw out_of_range("Called pop on empty stack.");
+		}
 	}
 
 	void pop_two() {
+		if (size > 1)
+		{
+			data[20 - size] = null;
+			size--;
 
+			data[20 - size] = null;
+			size--;
+		}
+		else if (size == 1)
+		{
+			throw out_of_range("Called pop_two on a stack of size 1.");
+		}
+		else
+		{
+			throw out_of_range("Called pop_two on empty stack.");
+		}
 	}
 
 	T top() {
@@ -45,7 +68,7 @@ public:
 		}
 		else
 		{
-			return null;
+			throw underflow_error("Called top on empty stack.");
 		}
 	}
 
