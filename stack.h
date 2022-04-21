@@ -33,7 +33,6 @@ public:
 	void pop(){
 		if (size > 0)
 		{
-			data[20 - size] = null;
 			size--;
 		}
 		else
@@ -45,11 +44,7 @@ public:
 	void pop_two() {
 		if (size > 1)
 		{
-			data[20 - size] = null;
-			size--;
-
-			data[20 - size] = null;
-			size--;
+			size -= 2;
 		}
 		else if (size == 1)
 		{
